@@ -105,13 +105,12 @@ def handle_client(client_socket, face):
 path = os.path.dirname(os.getcwd())
 
 ip = 'localhost'
-port = 8080
+port = 9999
 
 # read model file
 model_dict = pickle.load(open(path + '\\model.p', 'rb'))
 model = model_dict['model']
 
-# cap = cv2.VideoCapture(0)
 
 # config mediapipe to detect landmarks of face
 mp_face = mp.solutions.face_mesh
@@ -125,7 +124,7 @@ server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind((ip, port))
 server_socket.listen(5)
 
-print("Server is listening on port 8080 ...")
+print(f"Server is listening on port {port} ...")
 
 while True:
     client_socket, client_address = server_socket.accept()
