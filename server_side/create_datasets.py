@@ -3,7 +3,8 @@ import pickle
 import mediapipe as mp
 import cv2
 
-DATA_DIR = './data'
+path = os.path.dirname(os.getcwd())
+DATA_DIR = path + '\\data'
 
 # config mediapipe to detect landmarks of face
 mp_face = mp.solutions.face_mesh
@@ -44,6 +45,6 @@ for dir_ in os.listdir(DATA_DIR):
             labels.append(dir_)
 
 # create data file
-file = open('data.pickle', 'wb')
+file = open(path + '\\data.pickle', 'wb')
 pickle.dump({'data': data, 'labels': labels}, file)
 file.close()

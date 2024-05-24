@@ -1,11 +1,13 @@
 import os
 import cv2
 
-number_of_faces = 1
+number_of_faces = 2
 dataset_size = 100
 
-# make directory in ./data path if not exist
-DATA_DIR = './data'
+# make directory in parent/data path if not exist
+path = os.path.dirname(os.getcwd())
+DATA_DIR = path + '\\data'
+
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR)
 
