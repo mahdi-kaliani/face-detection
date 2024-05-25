@@ -108,7 +108,7 @@ ip = 'localhost'
 port = 9999
 
 # read model file
-model_dict = pickle.load(open(path + '\\model.p', 'rb'))
+model_dict = pickle.load(open('model.p', 'rb'))
 model = model_dict['model']
 
 

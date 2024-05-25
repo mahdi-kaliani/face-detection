@@ -8,7 +8,7 @@ import numpy as np
 path = os.path.dirname(os.getcwd())
 
 # read data file
-data_dict = pickle.load(open(path + '\\data.pickle', 'rb'))
+data_dict = pickle.load(open('data.pickle', 'rb'))
 data = np.asarray(data_dict['data'])
 labels = np.asarray(data_dict['labels'])
 
@@ -25,6 +25,6 @@ score = accuracy_score(y_predict, y_test)
 print('{}% of samples were classified correctly !'.format(score * 100))
 
 # create model file
-file = open(path + '\\model.p', 'wb')
+file = open('model.p', 'wb')
 pickle.dump({'model': model}, file)
 file.close()
